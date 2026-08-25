@@ -72,6 +72,11 @@ $recommended_plugins = array_map('callback_recommended_plugin', $recommended_plu
 		<div class="the-list">
 			<?php
 			foreach ( $recommended_plugins as $single_plugin ) {
+				
+				if ( ! $single_plugin ) {
+					continue;
+				}
+
 				if ( is_object( $single_plugin ) ) {
 					$single_plugin = (array) $single_plugin;
 				}

@@ -269,8 +269,7 @@ if (!class_exists('Guidant_Ask_Review')) {
 					width: 40px;
 				}
 				.guidant-review-notice-icon img {
-					width: inherit;
-					height: inherit;
+					width: 100%;
 				}
 				.guidant-review-notice-inner a {
 					color: #de5819;
