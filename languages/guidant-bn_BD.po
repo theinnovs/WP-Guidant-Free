@@ -1,0 +1,153 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Guidant\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-08 11:07+0000\n"
+"PO-Revision-Date: 2026-09-08 11:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: Bengali (Bangladesh)\n"
+"Language: bn_BD\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.8; wp-7.1; php-8.2.27\n"
+"X-Domain: guidant"
+
+#: backend/class-guidant-admin.php:174 backend/class-guidant-admin.php:175
+msgid "Useful Plugins"
+msgstr ""
+
+#. Name of the plugin
+#: backend/class-guidant-ask-review.php:166
+msgid "WP Guidant"
+msgstr ""
+
+#: backend/class-guidant-ask-review.php:171
+msgid "WP Guidant Logo"
+msgstr ""
+
+#. %s: plugin name
+#: backend/class-guidant-ask-review.php:178
+#, php-format
+msgid "Thanks for using %s."
+msgstr ""
+
+#: backend/class-guidant-ask-review.php:184
+msgid ""
+"If you are finding it useful, please consider leaving a quick review. It "
+"really helps us improve and continue supporting the plugin."
+msgstr ""
+
+#: backend/class-guidant-ask-review.php:188
+msgid "Leave a review"
+msgstr ""
+
+#: backend/class-guidant-ask-review.php:190
+msgid "Remind me later"
+msgstr ""
+
+#: backend/class-guidant-ask-review.php:191
+msgid "I already reviewed"
+msgstr ""
+
+#: backend/class-guidant-ask-review.php:311
+#: backend/class-guidant-ask-review.php:323
+msgid "Unauthorized"
+msgstr ""
+
+#: backend/api/card_tab_page_save.php:24 backend/api/form_tab_page_save.php:54
+#: backend/api/slider_tab_page_save.php:61
+msgid "Element Saved"
+msgstr ""
+
+#: backend/api/conditions_create.php:41
+msgid "Condition Created"
+msgstr ""
+
+#: backend/api/conditions_delete.php:13
+msgid "Condition Deleted"
+msgstr ""
+
+#: backend/api/elements_create.php:25
+msgid "Element Created"
+msgstr ""
+
+#: backend/api/elements_delete.php:13
+msgid "Element Deleted"
+msgstr ""
+
+#: backend/api/fields_create.php:21
+msgid "Custom Field Created"
+msgstr ""
+
+#: backend/api/fields_delete.php:13
+msgid "Field Deleted"
+msgstr ""
+
+#: backend/api/filters_create.php:44
+msgid "Filter Created"
+msgstr ""
+
+#: backend/api/filters_delete.php:13
+msgid "Filter Deleted"
+msgstr ""
+
+#: backend/api/guides_create.php:358
+msgid "Guide Created"
+msgstr ""
+
+#: backend/api/guides_delete.php:13
+msgid "Guide Deleted"
+msgstr ""
+
+#: backend/api/logic_create.php:30
+msgid "Logic Created"
+msgstr ""
+
+#: backend/api/logic_delete.php:13
+msgid "Logic Deleted"
+msgstr ""
+
+#: backend/api/results_create.php:43
+msgid "Attribute Created"
+msgstr ""
+
+#: backend/api/results_delete.php:13
+msgid "Result Atrribute Deleted"
+msgstr ""
+
+#: backend/api/submission_delete.php:13
+msgid "Submission Deleted"
+msgstr ""
+
+#: backend/templates/views/guide.php:8
+msgid "Guide Name"
+msgstr ""
+
+#: backend/templates/views/guide.php:13
+msgid "Guide Title"
+msgstr ""
+
+#: backend/templates/views/guide.php:17
+msgid "Guide Description"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Build Multi-step Guided Selling Process & Smart Forms to Convert 10X More "
+"Traffic Into Leads & New Customers."
+msgstr ""
+
+#. URI of the plugin
+msgid "https://wpcommerz.com/guidant/"
+msgstr ""
+
+#. Author of the plugin
+msgid "WPCommerz"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://wpcommerz.com/"
+msgstr ""

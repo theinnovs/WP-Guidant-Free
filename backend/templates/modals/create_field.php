@@ -1,28 +1,28 @@
 <div id="guidant_custom_field_create" style="display: none;">
     <div class="guidant-modal">
         <div class="guidant-modalheader">
-            <h3> Create Custom Field</h3>
+            <h3> <?php echo esc_html__('Create Custom Field', 'guidant'); ?></h3>
             <span class="dashicons dashicons-no-alt target" onclick="guidant_field_create_close('<?php echo esc_attr(GUIDANT_URL); ?>')"></span>
         </div>
         <div class="guidant-modalbody">
             <div class="guidant-modalform">
                 <div class="guidant_form_group">
-                    <label for="guidant-ftitle"> Field Label <?php $this->guidant_field_info("Label of the custom field."); ?></label>
+                    <label for="guidant-ftitle"> <?php echo esc_html__('Field Label', 'guidant'); ?> <?php $this->guidant_field_info("Label of the custom field."); ?></label>
                     <input type="text" name="ftitle" id="guidant_field_create_field_label" placeholder="">
-                    <p class="guidant_field_error" id="guidant_field_create_field_label_empty">Field Label can't be empty</p>
+                    <p class="guidant_field_error" id="guidant_field_create_field_label_empty"> <?php echo esc_html__('Field Label can\'t be empty', 'guidant'); ?> </p>
                 </div>
                 <div class="guidant_form_group">
-                    <label for="guidant-fdes"> Placement <?php $this->guidant_field_info("Where to show the field? ie. Post Edit Page."); ?></label>
+                    <label for="guidant-fdes"> <?php echo esc_html__('Placement', 'guidant'); ?> <?php $this->guidant_field_info("Where to show the field? ie. Post Edit Page."); ?></label>
                     <select id="guidant_field_create_field_placement">
-                        <option value="">Select</option>
-                        <option value="post">Post</option>
-                        <option value="product">Product</option>
-                        <option value="all">Post & Product</option>
+                        <option value=""> <?php echo esc_html__('Select', 'guidant'); ?> </option>
+                        <option value="post"> <?php echo esc_html__('Post', 'guidant'); ?> </option>
+                        <option value="product"> <?php echo esc_html__('Product', 'guidant'); ?> </option>
+                        <option value="all"> <?php echo esc_html__('Post & Product', 'guidant'); ?> </option>
                     </select>
-                    <p class="guidant_field_error" id="guidant_field_create_field_placement_empty">No placement selected</p>
+                    <p class="guidant_field_error" id="guidant_field_create_field_placement_empty"> <?php echo esc_html__('No placement selected', 'guidant'); ?> </p>
                 </div>
             </div>
-            <button class="guidant-btn guidant_custom_field_create_btn" onclick="guidant_field_create('<?php echo esc_attr(GUIDANT_URL); ?>')"> Create Field</button>
+            <button class="guidant-btn guidant_custom_field_create_btn" onclick="guidant_field_create('<?php echo esc_attr(GUIDANT_URL); ?>')"> <?php echo esc_html__('Create Field', 'guidant'); ?></button>
         </div>
     </div>
 </div>

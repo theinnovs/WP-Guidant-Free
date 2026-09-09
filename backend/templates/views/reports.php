@@ -1,12 +1,12 @@
 
 <div id="guidant_reports_list" style="display: none;">
     <div class="guidant-body-title">
-        <h3> All Submission Reports </h3>
+        <h3> <?php echo esc_html__('All Submission Reports', 'guidant'); ?> </h3>
 
 
         <div class="guidant_header_form">
             <select id="guidant_reports_list_guide_items">
-                <option value="0">All Guides</option>
+                <option value="0"> <?php echo esc_html__('All Guides', 'guidant'); ?> </option>
 
                 <?php
                 $list_guides = $this->settings->listAllGuides();
@@ -26,7 +26,7 @@
         <div class='loader'></div>
     </div>
     <div class="guidant_empty_style_1 guidant-empty">
-        <h3>No Guide Usages Recorded Yet</h3>
+        <h3><?php echo esc_html__('No Guide Usages Recorded Yet', 'guidant'); ?></h3>
     </div>
     <div id="guidant_reports_list_items">
         <!--<div class="guidant_card_style_1">

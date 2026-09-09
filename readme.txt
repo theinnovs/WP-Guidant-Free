@@ -1,11 +1,11 @@
 === WP Guidant | Guided Selling & Product Recommendation Quiz Plugin ===
-Contributors: wpcommerz, darklup, hivesupport, shahinsalehiin, marufmks
+Contributors: wpcommerz, theinnovs, darklup, hivesupport
 Donate link: https://wpcommerz.com/guidant/
 Tags: product recommendation, quiz builder, guided selling, guide plugin, product recommendation quiz
 Requires PHP: 7.4
 Requires at least: 6.5
-Tested up to: 6.9
-Stable tag: 1.2.7
+Tested up to: 7.1
+Stable tag: 1.2.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -219,9 +219,11 @@ Boost conversions with WP Guidant! Drive sales using guided selling, product rec
 
 <h3>🔥 WP GUIDANT FEATURED BY TOP REVIEWER:</h3>
 
-<p>Lot of love by WPLearningLab, WP Simple Hacks and DecisiveMarketer.</p>
+<p>Lot of love by WPLearningLab, WP Simple Hacks and More.</p>
+[youtube https://www.youtube.com/watch?v=NIRh33eLe3I]
 [youtube https://www.youtube.com/watch?v=puDIXLNRKXU]
 [youtube https://www.youtube.com/watch?v=m1B4I1irRs4]
+[youtube https://www.youtube.com/watch?v=NIRh33eLe3I]
 [youtube https://www.youtube.com/watch?v=-eAZJzjG3Jg]
 
 
@@ -335,6 +337,11 @@ screenshot-13.png
 screenshot-14.png
 
 == Changelog ==
+
+= 1.2.7.1 =
+
+Fixed: Deprecated functions
+Added: 7.1 Compatibility
 
 = 1.2.7 =
 
