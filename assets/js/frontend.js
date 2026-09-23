@@ -568,16 +568,16 @@ function guidant_guide_submission(unique_id, guide_id){
 
                     jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_loader_container").hide();
 
-                    if(obj.hasOwnProperty("best_result")){
-                        if(obj.best_result.toString().length > 5){
-                            jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_best_result_container").show();
-                            jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_best_result_container .guidant_result_container").append(obj.best_result);
-                        }else{
-                            jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_empty_container").show();
-                        }
-                    }else{
-                        jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_no_result_container").show();
-                    }
+                    // if(obj.hasOwnProperty("best_result")){
+                    //     if(obj.best_result.toString().length > 5){
+                    //         jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_best_result_container").show();
+                    //         jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_best_result_container .guidant_result_container").append(obj.best_result);
+                    //     }else{
+                    //         jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_empty_container").show();
+                    //     }
+                    // }else{
+                    //     jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_no_result_container").show();
+                    // }
 
 
                     if(obj.hasOwnProperty("other_results")){
@@ -587,6 +587,13 @@ function guidant_guide_submission(unique_id, guide_id){
                         }
                     }
 
+                }else if(obj.status == "false"){
+
+                    jQuery(".guidant_unique_id_"+unique_id+" #guidantguide_loader_container").hide();
+                    jQuery(".guidant_unique_id_"+unique_id+" .guidantguide_filters_container").show();
+
+                    alert(obj.message);
+                    return;
                 }
             }
         })

@@ -4,9 +4,11 @@
 $resultant_post_id_element_wise = array();
 if(isset($_REQUEST['security']) && isset($_REQUEST['guide_id']) && isset($_REQUEST['submissions'])) {
 
+
     check_ajax_referer( 'guidant_hashkey', 'security' );
 
     $guide_id = sanitize_text_field($_REQUEST['guide_id']);
+    // print_r($guide_id); die;
     $submissions = $_REQUEST['submissions'];
     $submissions = urldecode($submissions);
     $submissions = stripcslashes($submissions);
@@ -69,6 +71,17 @@ if(isset($_REQUEST['security']) && isset($_REQUEST['guide_id']) && isset($_REQUE
                     $behavior = ($behavior == Null) ? "or" : $behavior;
 
                     $conditions = $this->settings->listAllConditions($element['element_id']);
+
+                    if(empty($conditions)){ // If no condition has been configured for this element, return false
+                        $result = array(
+                            "status"  => "false",
+                            "message" => "Sorry, no result found for your selection. Please try again with different options."
+                        );
+
+                        echo json_encode($result, JSON_UNESCAPED_UNICODE);
+                        exit;
+                    }
+
                     foreach ($conditions as $single_condition){
                         $attribute_type = $this->settings->updateConditionSettings($single_condition['condition_id'], "attribute_type");
                         $matching_type = $this->settings->updateConditionSettings($single_condition['condition_id'], "matching_type");
@@ -81,11 +94,29 @@ if(isset($_REQUEST['security']) && isset($_REQUEST['guide_id']) && isset($_REQUE
 
                     }
 
+                    // if($behavior == "and"){
+                    //     $condition_wise_resultant_ids = array_filter($condition_wise_resultant_ids); // filter out empty array
+                    //     $element_wise_resultant_ids = array_merge($element_wise_resultant_ids, array_intersect(...$condition_wise_resultant_ids));
+                    // }else if($behavior == "or"){
+                    //     $element_wise_resultant_ids = array_merge($element_wise_resultant_ids, ...$condition_wise_resultant_ids);
+                    // }
+
                     if($behavior == "and"){
-                        $condition_wise_resultant_ids = array_filter($condition_wise_resultant_ids); // filter out empty array
-                        $element_wise_resultant_ids = array_merge($element_wise_resultant_ids, array_intersect(...$condition_wise_resultant_ids));
+                        $condition_wise_resultant_ids = array_filter($condition_wise_resultant_ids);
+
+                        if(!empty($condition_wise_resultant_ids)){
+                            $element_wise_resultant_ids = array_merge(
+                                $element_wise_resultant_ids,
+                                array_intersect(...$condition_wise_resultant_ids)
+                            );
+                        }
                     }else if($behavior == "or"){
-                        $element_wise_resultant_ids = array_merge($element_wise_resultant_ids, ...$condition_wise_resultant_ids);
+                        if(!empty($condition_wise_resultant_ids)){
+                            $element_wise_resultant_ids = array_merge(
+                                $element_wise_resultant_ids,
+                                ...$condition_wise_resultant_ids
+                            );
+                        }
                     }
 
 
@@ -98,6 +129,15 @@ if(isset($_REQUEST['security']) && isset($_REQUEST['guide_id']) && isset($_REQUE
                 $behavior = ($behavior == Null) ? "or" : $behavior;
 
                 $conditions = $this->settings->listAllConditions($element['element_id']);
+                if(empty($conditions)){ // If no condition has been configured for this element, return false
+                    $result = array(
+                        "status"  => "false",
+                        "message" => "Sorry, no result found for your selection. Please try again with different options."
+                    );
+
+                    echo json_encode($result, JSON_UNESCAPED_UNICODE);
+                    exit;
+                }
                 foreach ($conditions as $single_condition){
                     $attribute_type = $this->settings->updateConditionSettings($single_condition['condition_id'], "attribute_type");
                     $matching_type = $this->settings->updateConditionSettings($single_condition['condition_id'], "matching_type");
@@ -108,11 +148,29 @@ if(isset($_REQUEST['security']) && isset($_REQUEST['guide_id']) && isset($_REQUE
                     }
                 }
 
+                // if($behavior == "and"){
+                //     $condition_wise_resultant_ids = array_filter($condition_wise_resultant_ids); // filter out empty array
+                //     $element_wise_resultant_ids = array_merge($element_wise_resultant_ids, array_intersect(...$condition_wise_resultant_ids));
+                // }else if($behavior == "or"){
+                //     $element_wise_resultant_ids = array_merge($element_wise_resultant_ids, ...$condition_wise_resultant_ids);
+                // }
+
                 if($behavior == "and"){
-                    $condition_wise_resultant_ids = array_filter($condition_wise_resultant_ids); // filter out empty array
-                    $element_wise_resultant_ids = array_merge($element_wise_resultant_ids, array_intersect(...$condition_wise_resultant_ids));
+                    $condition_wise_resultant_ids = array_filter($condition_wise_resultant_ids);
+
+                    if(!empty($condition_wise_resultant_ids)){
+                        $element_wise_resultant_ids = array_merge(
+                            $element_wise_resultant_ids,
+                            array_intersect(...$condition_wise_resultant_ids)
+                        );
+                    }
                 }else if($behavior == "or"){
-                    $element_wise_resultant_ids = array_merge($element_wise_resultant_ids, ...$condition_wise_resultant_ids);
+                    if(!empty($condition_wise_resultant_ids)){
+                        $element_wise_resultant_ids = array_merge(
+                            $element_wise_resultant_ids,
+                            ...$condition_wise_resultant_ids
+                        );
+                    }
                 }
 
             }else if($element['element_type'] == "form"){
@@ -131,6 +189,16 @@ if(isset($_REQUEST['security']) && isset($_REQUEST['guide_id']) && isset($_REQUE
 
 
     if($display_result == "true") {
+
+        if(empty($resultant_post_id_element_wise)){
+            $result = array(
+                "status"  => "false",
+                "message" => "Sorry, no result found for your selection. Please try again with different options."
+            );
+
+            echo json_encode($result, JSON_UNESCAPED_UNICODE);
+            exit;
+        }
 
         if (sizeof($resultant_post_id_element_wise) > 1) {
             $filtered_post_ids = array_intersect(...$resultant_post_id_element_wise);

@@ -138,7 +138,7 @@ if (!class_exists('Guidant_Ask_Review')) {
 	
 			$delay_days = 30; // remind later after 30 days;
 			if ( ! get_option( 'guidant_review_notice_delayed' ) ) {
-				$delay_days = 10; // show notice after 10 days of this class is instantiated
+				$delay_days = 30; // show notice after 30 days of this class is instantiated
 			}
 	
 			$review_notice_date = $this->current_time + ( $delay_days * DAY_IN_SECONDS );
@@ -269,8 +269,7 @@ if (!class_exists('Guidant_Ask_Review')) {
 					width: 40px;
 				}
 				.guidant-review-notice-icon img {
-					width: inherit;
-					height: inherit;
+					width: 100%;
 				}
 				.guidant-review-notice-inner a {
 					color: #de5819;

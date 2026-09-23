@@ -1,7 +1,7 @@
 <div id="guidant_single_submission" style="display: none;">
     <div class="guidant-modal">
         <div class="guidant-modalheader">
-            <h3> Individual Report</h3>
+            <h3> <?php echo esc_html__('Individual Report', 'guidant'); ?></h3>
             <span class="dashicons dashicons-no-alt target" onclick="guidant_single_submission_close('<?php echo esc_attr(GUIDANT_URL); ?>')"></span>
         </div>
         <div class="guidant_loader_block guidant-loader" style="display: none;">
